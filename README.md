@@ -3,5 +3,5 @@
 模型加载： import { loadGraphModel } from '@tensorflow/tfjs-converter';
 模型数据预测
 
-tensorflow >=2  la=oadGraphModel
+tensorflow >=2  loadGraphModel
 keras model = loadLayersModel 
