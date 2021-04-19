@@ -11,7 +11,7 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import * as tf from '@tensorflow/tfjs';
-// import { loadLayersModel } from '@tensorflow/tfjs-converter';
+import { loadGraphModel } from '@tensorflow/tfjs-converter';
 import freeline from './freeDraw';
 export default {
     components: {},
@@ -65,14 +65,14 @@ export default {
             });
         },
         async load_model() {
-            let MODEL_URL = 's/model.json';
-            
-            this.model = await tf.loadLayersModel(MODEL_URL);
+            let MODEL_URL = 'web_model/model.json';
+
+            this.model = await loadGraphModel(MODEL_URL);
             console.log(this.model);
         },
         predict(input) {
             let INPUT_NODE_NAME = 'input_1';
-            let OUTPUT_NODE_NAME = 'conv2d_26/conv2d_26';
+            let OUTPUT_NODE_NAME = "Identity";
             let preprocessedInput = tf.div(
                 tf.sub(input.asType('float32'), tf.scalar(255 / 2)),
                 tf.scalar(255 / 2)
