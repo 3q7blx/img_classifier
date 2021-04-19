@@ -11,7 +11,7 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import * as tf from '@tensorflow/tfjs';
-import { loadGraphModel } from '@tensorflow/tfjs-converter';
+// import { loadGraphModel } from '@tensorflow/tfjs-converter';
 import freeline from './freeDraw';
 export default {
     components: {},
@@ -65,9 +65,9 @@ export default {
             });
         },
         async load_model() {
-            let MODEL_URL = 'web_model/model.json';
+            let MODEL_URL = 'deeplabv3/model.json';
 
-            this.model = await loadGraphModel(MODEL_URL);
+            this.model = await tf.loadLayersModel(MODEL_URL);
             console.log(this.model);
         },
         predict(input) {

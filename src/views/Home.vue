@@ -1,25 +1,24 @@
 <template>
     <div class="home">
-		<Map />
+        <Map v-if="False" />
+        <HelloWorld />
     </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-import Map from '../components/Mapbox'
+import Map from '../components/Mapbox';
+import HelloWorld from '../components/HelloWorld';
 export default {
     name: 'Home',
-	data(){
-		return {
-			
-		}
-	},
-    components: { Map},
-    mounted() {
+    data() {
+        return {
+            False: false,
+        };
     },
-    methods: {
-       
-    },
+    components: { Map, HelloWorld },
+    mounted() {},
+    methods: {},
 };
 </script>
