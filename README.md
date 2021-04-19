@@ -1,24 +1,7 @@
-# vue_jb
+模型训练 tfgpu  Basic
+模型转换： tfjs tensorflowjs_converter --input_format=tf_saved_model .\saved_model\  web_model
+模型加载： import { loadGraphModel } from '@tensorflow/tfjs-converter';
+模型数据预测
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+tensorflow >=2  la=oadGraphModel
+keras model = loadLayersModel 
