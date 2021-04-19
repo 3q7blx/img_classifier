@@ -72,7 +72,7 @@ export default {
         },
         predict(input) {
             let INPUT_NODE_NAME = 'input_1';
-            let OUTPUT_NODE_NAME = "Identity";
+            let OUTPUT_NODE_NAME = 'Identity';
             let preprocessedInput = tf.div(
                 tf.sub(input.asType('float32'), tf.scalar(255 / 2)),
                 tf.scalar(255 / 2)
